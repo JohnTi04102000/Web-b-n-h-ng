@@ -1,0 +1,33 @@
+form {
+    border: #e26e70 solid 1px;
+    width: 100;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+table {
+    margin: 0 auto;
+    width: 100;
+
+}
+
+#TTNN {
+    background-color: #e26e70;
+    color: white;
+}
+
+button{
+    height: 40px;
+    background-color: aqua;
+    position: relative;
+    margin-left: 450px; 
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #000;
+    font-weight: 700;
+    font-size:25;
+}
+
+.hide{
+    display: none;
+}
+

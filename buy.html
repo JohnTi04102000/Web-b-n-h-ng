@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="buy.css">
+    <title>Xác nhận đơn hàng</title>
+</head>
+<body>
+    <script>
+        function XuatThongTin()
+        {
+            document.getElementById("TenNN").innerHTML = document.forms["F1"]["txt_NameReciever"].value;
+            document.getElementById("PhoneNN").innerHTML = document.forms["F1"]["txt_PhoneNumReciever"].value;
+            document.getElementById("DCNN").innerHTML = document.forms["F1"]["txt_AddReciever"].value;
+            document.getElementById("TinhNN").innerHTML = document.forms["F1"]["DDL_City"].value;
+            document.getElementById("QuanNN").innerHTML = document.forms["F1"]["DDL_DisTrict"].value;
+            document.getElementById("EmailNN").innerHTML = document.forms["F1"]["txt_EmailReciever"].value;
+
+        }
+    </script>
+    <form name="F1" method="post" >
+
+        <table style="margin: 0 auto;">
+            <tr id="TTNN">
+                <td colspan="2"><h3 style="text-align: center;">THÔNG TIN NGƯỜI MUA HÀNG</h3></td>
+            </tr>
+            <tr>
+                <td>* Người Mua</td>
+                <td>
+                    <input type="text" placeholder="Nhập họ và tên" size="100" id="txt_NameReciever" name="txt_NameReciever"/>
+                </td>
+            </tr>
+            <tr>
+                <td>* Điện thoại</td>
+                <td>
+                    <input type="text" placeholder="Nhập phone" size="100" id="txt_PhoneNumReciever" name="txt_PhoneNumReciever"/>
+                </td>
+            </tr>
+            <tr>
+                <td>* E-Mail</td>
+                <td>
+                    <input type="text" placeholder="Nhập Email" size="100" id="txt_EmailReciever" name="txt_EmailReciever"/>
+                </td>
+            </tr>
+            <tr>
+                <td>* Địa chỉ</td>
+                <td>
+                    <input type="text" placeholder="Nhập địa chỉ" size="100" id="txt_AddReciever" name="txt_AddReciever"/>
+                </td>
+            </tr>
+            <tr>
+                <td>* Tỉnh/TP</td>
+                <td> 
+                    <select name="DDL_City" style="margin-left:20px; width: 620px; height: 50px;" id="DDL_City">
+                        <option value="TP.HCM nội thành">TP.HCM nội thành</option>
+                        <option value="Hà Nội">Hà Nội</option>
+                        <option value="Huế">Huế</option>
+                        <option value="Đà Nẵng">Đà Nẵng</option>
+                        <option value="Quảng Ninh">Quảng Ninh</option>
+                        <option value="Đăk Lăk">Đăk Lăk</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>* Quận</td>
+                <td> 
+                    <select name="DDL_District" style="margin-left:20px; width: 620px; height: 50px;" id="DDL_DisTrict">
+                        <option value="Quận 1"> Quận 1</option>
+                        <option value="Quận 2">Quận 2</option>
+                        <option value="QUận 3">Quận 3</option>
+                        <option value="Quận Tân Phú">Quận Tân Phú</option>
+                        <option value="Quận Tân Bình">Quận Tân Bình</option>
+                        <option value="Thành Phố Biển Thủ Đức">Thành Phố Biển Thủ Đức</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <div class="open">
+    <center><input type="button" value="GỬI THÔNG TIN" onclick="XuatThongTin()"></center>
+        </div>
+    </form>
+    <div class="display hide">
+    <h2 style="text-align:center" class="dd">XÁC NHẬN MUA HÀNG THÀNH CÔNG</h2></i>
+    <div style="border:#666 solid 1px ;width:48%; margin: 0 auto; border-radius:5px ">
+        <table style="margin: 0 auto;">
+        <table style="margin: 0 auto;">
+            <tr style="background-color: #CCCCCC;">
+                <td colspan="2"><h3 style="text-align: center;">THÔNG TIN NGƯỜI NHẬN</h3></td>
+            </tr>
+            <tr>
+                <td>*Người mua</td>
+                <td id="TenNN" class="dd"> </td>
+            </tr>
+            <tr>
+                <td>*E-Mail</td>
+                <td id="EmailNN" class="dd"> </td>
+            </tr>
+            <tr>
+                <td>*Điện Thoại</td>
+                <td id="PhoneNN" class="dd"> </td>
+            </tr>
+            <tr>
+                <td>*Địa chỉ</td>
+                <td id="DCNN" class="dd"> </td>
+            </tr>
+            <tr>
+                <td>*Tỉnh/TP</td>
+                <td id="TinhNN" class="dd"> </td>
+            </tr>
+            <tr>
+                <td>*Quận</td>
+                <td id="QuanNN" class="dd"> </td>
+            </tr>
+        </table>
+        <br>
+        <p style="margin-left: 10px; font-weight:600;">Tổng tiền thanh toán: </p>
+        <button> <a href="index.html" style="text-decoration: none;"> Quay lại trang chủ </a></button>
+    </div>
+</div>
+
+<script>
+
+      const open = document.querySelector(".open");
+      const close = document.querySelector(".display");
+      const display = document.querySelector(".open input");
+      
+      function Hide(e) 
+      {
+        close.classList.toggle("hide"); 
+
+      }
+
+      /* open.addEventListener("click",Hide); */
+        
+      /* open.addEventListener("click",firework);
+      open.addEventListener("click",write_fire);
+      open.addEventListener("click",createDiv);
+      open.addEventListener("click",launch);
+      open.addEventListener("click",bang);
+      open.addEventListener("click",stepthrough);
+      open.addEventListener("click",set_width); */
+      
+      close.addEventListener("click", function(e) {
+        if (e.target == e.currentTarget) toggleModal();
+      });
+
+      open.addEventListener("click", Hide);
+
+
+      
+
+
+        var bits = 90;
+        var speed = 33;
+        var bangs = 7;
+        var colours = new Array("#03f", "#f03", "#fff", "#f7efa1", "#0cf", "#f93", "#f0c", "#fff");
+        var bangheight = new Array();
+        var intensity = new Array();
+        var colour = new Array();
+        var Xpos = new Array();
+        var Ypos = new Array();
+        var dX = new Array();
+        var dY = new Array();
+        var stars = new Array();
+        var decay = new Array();
+        var swide = 800;
+        var shigh = 600;
+        var boddie;
+        window.onload = function() {
+            if (document.getElementById) {
+                var i;
+                boddie = document.createElement("div");
+                boddie.style.position = "fixed";
+                boddie.style.top = "0px";
+                boddie.style.left = "0px";
+                boddie.style.overflow = "visible";
+                boddie.style.width = "1px";
+                boddie.style.height = "1px";
+                boddie.style.backgroundColor = "transparent";
+                document.body.appendChild(boddie);
+                set_width();
+                for (i = 0; i < bangs; i++) {
+                    write_fire(i);
+                    launch(i);
+                    setInterval('stepthrough(' + i + ')', speed);
+                }
+            }
+        }
+
+        function write_fire(N) {
+            var i, rlef, rdow;
+            stars[N + 'r'] = createDiv('|', 12);
+            boddie.appendChild(stars[N + 'r']);
+            for (i = bits * N; i < bits + bits * N; i++) {
+                stars[i] = createDiv('*', 13);
+                boddie.appendChild(stars[i]);
+            }
+        }
+
+        function createDiv(char, size) {
+            var div = document.createElement("div");
+            div.style.font = size + "px monospace";
+            div.style.position = "absolute";
+            div.style.backgroundColor = "transparent";
+            div.appendChild(document.createTextNode(char));
+            return (div);
+        }
+
+        function launch(N) {
+            colour[N] = Math.floor(Math.random() * colours.length);
+            Xpos[N + "r"] = swide * 0.5;
+            Ypos[N + "r"] = shigh - 5;
+            bangheight[N] = Math.round((0.5 + Math.random()) * shigh * 0.4);
+            dX[N + "r"] = (Math.random() - 0.5) * swide / bangheight[N];
+            if (dX[N + "r"] > 1.25) stars[N + "r"].firstChild.nodeValue = "/";
+            else if (dX[N + "r"] < -1.25) stars[N + "r"].firstChild.nodeValue = "\\";
+            else stars[N + "r"].firstChild.nodeValue = "|";
+            stars[N + "r"].style.color = colours[colour[N]];
+        }
+
+        function bang(N) {
+            var i, Z, A = 0;
+            for (i = bits * N; i < bits + bits * N; i++) {
+                Z = stars[i].style;
+                Z.left = Xpos[i] + "px";
+                Z.top = Ypos[i] + "px";
+                if (decay[i]) decay[i]--;
+                else A++;
+                if (decay[i] == 15) Z.fontSize = "10px";
+                else if (decay[i] == 7) Z.fontSize = "2px";
+                else if (decay[i] == 1) Z.visibility = "hidden";
+                Xpos[i] += dX[i];
+                Ypos[i] += (dY[i] += 1.25 / intensity[N]);
+            }
+            if (A != bits) setTimeout("bang(" + N + ")", speed);
+        }
+
+        function stepthrough(N) {
+            var i, M, Z;
+            var oldx = Xpos[N + "r"];
+            var oldy = Ypos[N + "r"];
+            Xpos[N + "r"] += dX[N + "r"];
+            Ypos[N + "r"] -= 4;
+            if (Ypos[N + "r"] < bangheight[N]) {
+                M = Math.floor(Math.random() * 3 * colours.length);
+                intensity[N] = 5 + Math.random() * 4;
+                for (i = N * bits; i < bits + bits * N; i++) {
+                    Xpos[i] = Xpos[N + "r"];
+                    Ypos[i] = Ypos[N + "r"];
+                    dY[i] = (Math.random() - 0.5) * intensity[N];
+                    dX[i] = (Math.random() - 0.5) * (intensity[N] - Math.abs(dY[i])) * 1.25;
+                    decay[i] = 25 + Math.floor(Math.random() * 25);
+                    Z = stars[i];
+                    if (M < colours.length) Z.style.color = colours[i % 2 ? colour[N] : M];
+                    else if (M < 2 * colours.length) Z.style.color = colours[colour[N]];
+                    else Z.style.color = colours[i % colours.length];
+                    Z.style.fontSize = "20px";
+                    Z.style.visibility = "visible";
+                }
+                bang(N);
+                launch(N);
+            }
+            stars[N + "r"].style.left = oldx + "px";
+            stars[N + "r"].style.top = oldy + "px";
+        }
+        window.onresize = set_width;
+
+        function set_width() {
+            var sw_min = 999999;
+            var sh_min = 999999;
+            if (document.documentElement && document.documentElement.clientWidth) {
+                if (document.documentElement.clientWidth > 0) sw_min = document.documentElement.clientWidth;
+                if (document.documentElement.clientHeight > 0) sh_min = document.documentElement.clientHeight;
+            }
+            if (typeof(self.innerWidth) != "undefined" && self.innerWidth) {
+                if (self.innerWidth > 0 && self.innerWidth < sw_min) sw_min = self.innerWidth;
+                if (self.innerHeight > 0 && self.innerHeight < sh_min) sh_min = self.innerHeight;
+            }
+            if (document.body.clientWidth) {
+                if (document.body.clientWidth > 0 && document.body.clientWidth < sw_min) sw_min = document.body.clientWidth;
+                if (document.body.clientHeight > 0 && document.body.clientHeight < sh_min) sh_min = document.body.clientHeight;
+            }
+            if (sw_min == 999999 || sh_min == 999999) {
+                sw_min = 800;
+                sh_min = 600;
+            }
+            swide = sw_min;
+            shigh = sh_min;
+        }
+
+
+</script>
+
+</body>
+</html>
